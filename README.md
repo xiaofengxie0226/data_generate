@@ -1,4 +1,9 @@
-# for spark_site-data_withGCP to create fake data
+# Fake Data Generation
 
-IDE: Pycharm<br>
-runtime: python 3.7.8
+## Basic Usage
+create fake log data and master data to simulate site data analysis.
+
+## Runtime
+python 3.7.8
+
+## License
