@@ -159,9 +159,11 @@ product_info_lst = ["product_id", "product_name", "extend_info"]
 user_info = master_table.dfCreate(columns=user_info_lst, prefix="M", rows=1000)
 product_info = master_table.dfCreate(columns=product_info_lst, prefix="P", id_range_end=11, rows=10)
 
+user_info.to_json("user_info.json.gz", orient='records', compression="gzip")
+product_info.to_json("product_info.json.gz", orient='records', compression="gzip")
 
-user_info.to_json("user_info.json.gz", orient='records',compression="gzip")
-product_info.to_json("product_info.json.gz", orient='records',compression="gzip")
+user_info.to_csv("user_info.csv.gz", index=False, compression="gzip")
+product_info.to_csv("product_info.csv.gz", index=False, compression="gzip")
 
 Log = TableCreate()
 log_lst = ["user_id", "session_id", "page_id", "action_time", "search_product_name", "click_product_id",
